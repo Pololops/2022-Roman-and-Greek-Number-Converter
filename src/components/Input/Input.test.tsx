@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import { ChangeEvent } from 'react';
 import Input from "./Input";
 
 describe('Input', () => {
   test('renders Input component', () => {
-    render(<Input />);
-
-    expect(screen.getByRole('heading', {level: 1})).toHaveTextContent('Roman Number Converter');
+    render(<Input inputText={''} onChangeValue={function (e: ChangeEvent<HTMLInputElement>): void {
+      throw new Error('Function not implemented.');
+    } } />);
   });
 });

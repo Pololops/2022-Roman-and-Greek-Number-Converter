@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Button from "./Button";
+import Message from "./Message";
 
 describe('Input', () => {
   test('renders Input component', () => {
-    render(<Button />);
+    render(<Message />);
   });
 });
