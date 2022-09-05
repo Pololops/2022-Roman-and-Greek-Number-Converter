@@ -1,0 +1,9 @@
+@use "src/styles/_vars";
+
+.header {
+  margin: 1rem;
+  font-weight: bold;
+  color: vars.$altColor;
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, .5);
+  font-size: 1.5rem;
+}

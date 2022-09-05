@@ -1,0 +1,10 @@
+@use "src/styles/_vars";
+
+.input {
+  padding: 0.4rem 0.6rem;
+  margin: 0;
+  border-width: 0;
+  border-bottom: 2px solid desaturate(vars.$altColor, 50%);
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+}

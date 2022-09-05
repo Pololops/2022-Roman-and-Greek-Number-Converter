@@ -1,0 +1,15 @@
+@use "src/styles/_vars";
+
+.button {
+  padding: .4rem .6rem;
+  margin: 0;
+  border-width: 0;
+  border-bottom: 2px solid desaturate(vars.$altColor, 50%);
+  border-radius: 0 6px 6px 0;
+  font-size: 1rem;
+
+  &:active {
+    box-shadow: inset 0 1px 2px dimgray;
+  }
+}
+
