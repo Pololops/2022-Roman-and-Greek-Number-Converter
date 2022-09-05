@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Input({inputText, onChangeValue}: Props) {
-
   return (
     <input
       className="input"
