@@ -8,7 +8,8 @@
     "no-console": "error",
     "import/first": "error",
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "testing-library/prefer-screen-queries": "off"
   },
   "extends": [
     "react-app",

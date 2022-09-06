@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import "./style.scss";
 
-export default function Input() {
-  const [errorMessage, setErrorMessage] = useState('');
-  const [inputValue, setInputValue] = useState('');
+interface Props {
+  inputValue: string;
+  onInputChange: React.ChangeEventHandler<HTMLInputElement>;
+}
 
-  const handleInputChange = (event: { target: { value: string; }; }) => {
-    const value: string = event.target.value;
-    const numberValue = Number(event.target.value);
-    if (value !== '' && (isNaN(numberValue) || numberValue <= 0 || numberValue > 3999)) {
-      setErrorMessage('You can only convert integer between 1 and 3999');
-    } else {
-      setInputValue(event.target.value);
-    }
-  };
+export default function Input({inputValue, onInputChange}: Props) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   return (
-    <>
     <input
+      ref={inputRef} // autoFocus
       className="input"
       data-testid="input"
       name="input"
@@ -28,11 +25,10 @@ export default function Input() {
       max="3999"
       step="1"
       value={inputValue}
-      onChange={handleInputChange}
+      onChange={onInputChange}
       required
-      autoFocus
       autoComplete="off"
+
     />
-    </>
   );
 }

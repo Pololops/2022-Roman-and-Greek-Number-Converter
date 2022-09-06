@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Input from "../Input/Input";
 import "./style.scss";
 
-import Input from "../Input/Input";
-import Button from "../Button/Button";
+interface Props {
+  inputValue: string;
+  onInputChange: React.ChangeEventHandler<HTMLInputElement>;
+}
 
-export default function Form() {
-
-	const [errorMessage, setErrorMessage] = useState('');
+export default function Form({inputValue, onInputChange}: Props) {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
 
   return (
-    <main className="main">
-      <form className="main__form">
-        <Input />
-        <Button />
+      <form className="form" data-testid="form" onSubmit={handleFormSubmit}>
+        <Input inputValue={inputValue} onInputChange={onInputChange} />
       </form>
-    </main>
   );
 }

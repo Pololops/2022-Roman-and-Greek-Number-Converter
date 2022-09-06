@@ -1,13 +1,6 @@
-@use "src/styles/_vars";
-
-.main {
-  text-shadow: 0 -1px 0 rgba(255, 255, 255, .5);
-  font-size: 1.5rem;
-
-  &__form {
-    padding: 1rem 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-  }
+.form {
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
