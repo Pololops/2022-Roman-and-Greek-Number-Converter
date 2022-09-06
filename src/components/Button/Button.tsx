@@ -3,6 +3,6 @@ import "./style.scss";
 
 export default function Form() {
   return (
-    <button className="button" type="submit">Convert</button>
+    <button className="button">Convert</button>
   );
 }

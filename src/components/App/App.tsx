@@ -10,7 +10,7 @@ function App() {
       <Header />
       <div className="main">
         <Form />
-        <Message />
+        <Message messageText={''} />
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 @use "src/styles/_vars";
 
 .title {
-  margin: 1rem;
+  margin: 1rem 0 3rem 0;
   font-weight: bold;
-  color: vars.$altColor;
+  color: vars.$textColor;
   text-shadow: 0 -1px 0 rgba(255, 255, 255, .5);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }

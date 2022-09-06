@@ -2,11 +2,9 @@
 
 .App {
   text-align: center;
-  margin: 20vh auto 0 auto;
+  margin: 4rem auto;
   padding: 14px 10px;
   border-radius: 5px;
-  min-width: 50px;
-  max-width: 400px;
-  background-color: vars.$primaryColor;
-  box-shadow: 0 2px 6px black;
+  min-width: 320px;
+  max-width: 640px;
 }

@@ -1,12 +1,12 @@
 @use "src/styles/_vars";
 
 .button {
-  padding: .4rem .6rem;
+  padding: 0.8rem 1.5rem;
   margin: 0;
   border-width: 0;
-  border-bottom: 2px solid desaturate(vars.$altColor, 50%);
+  border-bottom: 2px solid desaturate(vars.$secondaryColor, 50%);
   border-radius: 0 6px 6px 0;
-  font-size: 1rem;
+  font-size: 1.4rem;
 
   &:active {
     box-shadow: inset 0 1px 2px dimgray;

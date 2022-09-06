@@ -1,9 +1,15 @@
 import React from 'react';
+import { Interface } from 'readline';
 import "./style.scss";
 
-export default function Message() {
+interface Props {
+    messageText: string;
+}
+
+export default function Message({messageText}: Props) {
   return (
-    <div className="message">
-    </div>
+    <p className="message">
+      {messageText}
+    </p>
   );
 }
