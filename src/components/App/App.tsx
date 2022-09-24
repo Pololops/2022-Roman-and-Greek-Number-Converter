@@ -3,13 +3,16 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Result from '../Result/Result';
-import RomanConverter from "../../converter/RomanConverter";
+import NumberConverter from "../../converter/numberConverter";
 import './style.scss';
 
 function App() {
+  const [languages, setLanguages] = useState([] as string[]);
+  const [activeLang, setActiveLang] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [result, setResult] = useState('');
+  const [isResultDisplay, setIsResultDisplay] = useState(true);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = event.target.value;
@@ -23,18 +26,35 @@ function App() {
     }
   };
 
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value: string = event.target.value;
+    setActiveLang(value);
+  }
+
   useEffect(() => {
-    const roman = new RomanConverter();
-    setResult(roman.convert(Number(inputValue)));
-  }, [inputValue]);
+    const combinations = new NumberConverter('roman').combinations
+    const combinationsKeys: string[] = Object.keys(combinations[combinations.length - 1]);
+    const filterCombinationsKeys =  combinationsKeys.filter((key) => (key !== 'value') && key)
+    setLanguages(filterCombinationsKeys);
+    setActiveLang(filterCombinationsKeys[0])
+  }, []);
+
+  useEffect(() => {
+    setIsResultDisplay(false);
+    const converter = new NumberConverter(activeLang);
+    setTimeout(() => {
+      setResult(converter.convert(Number(inputValue)));
+      setIsResultDisplay(true);
+    }, 200);
+  }, [inputValue, activeLang]);
 
   return (
     <div className="App" data-testid="app">
       <Header />
       <div className="main">
-        <Form inputValue={inputValue} onInputChange={handleInputChange} />
+        <Form radioValues={languages} activeLang={activeLang} inputValue={inputValue} onInputChange={handleInputChange} onRadioChange={handleRadioChange} />
         <ErrorMessage messageText={errorMessage} />
-        <Result resultText={result} />
+        <Result resultText={result} isDisplay={isResultDisplay} />
       </div>
     </div>
   );

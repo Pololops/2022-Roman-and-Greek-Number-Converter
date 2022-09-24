@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./style.scss";
 
 interface Props {
     resultText: string;
+    isDisplay: boolean;
 }
 
-export default function ResultMessage({resultText}: Props) {
+export default function ResultMessage({resultText, isDisplay}: Props) {
   return (
-    <p className="result" data-testid="result">{resultText}</p>
+    <p className={(isDisplay) ? 'result' : 'result hide'} data-testid="result">{resultText}</p>
   );
 }

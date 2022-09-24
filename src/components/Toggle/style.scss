@@ -1,0 +1,43 @@
+@use "src/styles/_vars";
+
+.languages-selector {
+  & .radio {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    margin: 0 0.5px;
+    border-width: 0;
+    border-bottom: 2px solid desaturate(vars.$secondaryColor, 50%);
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    font-variant: small-caps;
+    background-color: darken(vars.$primaryColor, 30%);
+    text-shadow: none;
+    transition: all 250ms ease-in-out;
+
+    & input {
+      display: none;
+    }
+
+    &.active {
+      background-color: lighten(vars.$textColor, 5%);
+    }
+
+    &:hover {
+      color: black;
+      background-color: darken(vars.$primaryColor, 20%);
+    }
+
+    &.active:hover {
+      background-color: lighten(vars.$textColor, 15%);
+    }
+
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+  }
+}

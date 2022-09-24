@@ -28,7 +28,6 @@ export default function Input({inputValue, onInputChange}: Props) {
       onChange={onInputChange}
       required
       autoComplete="off"
-
     />
   );
 }

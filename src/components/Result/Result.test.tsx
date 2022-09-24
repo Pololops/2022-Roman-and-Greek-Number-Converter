@@ -2,7 +2,7 @@ import { render, cleanup } from '@testing-library/react';
 import Result from "./Result";
 
 const setup = () => {
-  const utils = render(<Result resultText={''}/>);
+  const utils = render(<Result resultText={''} isDisplay={true} />);
   const result = utils.getByTestId('result') as HTMLInputElement;
   return {
     result,

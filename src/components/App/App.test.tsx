@@ -45,7 +45,7 @@ describe('App', () => {
   });
 
   test('pass invalid value to test input field, error message and result', async () => {
-    const { input, result, errorMessage } = setup();
+    const { input, errorMessage } = setup();
 
     userEvent.type(input, '0');
     expect(input.value).not.toBe('0');

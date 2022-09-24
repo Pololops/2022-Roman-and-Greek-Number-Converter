@@ -1,6 +1,8 @@
 .form {
   padding: 1rem 0;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
