@@ -10,7 +10,7 @@ export default function Input({inputValue, onInputChange}: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   useEffect(() => {
     inputRef.current?.focus();
-  }, []);
+  });
 
   return (
     <input
@@ -20,7 +20,6 @@ export default function Input({inputValue, onInputChange}: Props) {
       name="input"
       type="text"
       placeholder="Enter a number to convert"
-      maxLength={4}
       min="1"
       max="3999"
       step="1"

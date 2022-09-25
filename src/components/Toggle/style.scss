@@ -3,7 +3,7 @@
 .languages-selector {
   & .radio {
     display: inline-block;
-    padding: 0.5rem 0.8rem;
+    padding: 0.3rem 1rem 0.5rem 1rem;
     margin: 0 0.5px;
     border-width: 0;
     border-bottom: 2px solid desaturate(vars.$secondaryColor, 50%);
@@ -15,7 +15,7 @@
     text-shadow: none;
     transition: all 250ms ease-in-out;
 
-    & input {
+    input {
       display: none;
     }
 

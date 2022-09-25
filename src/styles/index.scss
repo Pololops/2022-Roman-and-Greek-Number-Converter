@@ -1,13 +1,12 @@
 @use "reset";
 @use "vars";
-@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
 
 body {
   height: 100vh;
   width: 100vw;
   margin: 0;
   text-align: center;
-  font-family: 'Gideon Roman', cursive;
+  font-family: "Times New Roman", Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(vars.$primaryColor, vars.$secondaryColor)

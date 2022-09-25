@@ -32,7 +32,7 @@ function App() {
   }
 
   useEffect(() => {
-    const combinations = new NumberConverter('roman').combinations
+    const combinations = new NumberConverter('').combinations;
     const combinationsKeys: string[] = Object.keys(combinations[combinations.length - 1]);
     const filterCombinationsKeys =  combinationsKeys.filter((key) => (key !== 'value') && key)
     setLanguages(filterCombinationsKeys);
@@ -46,7 +46,12 @@ function App() {
       setResult(converter.convert(Number(inputValue)));
       setIsResultDisplay(true);
     }, 200);
-  }, [inputValue, activeLang]);
+  }, [activeLang]);
+
+  useEffect(() => {
+    const converter = new NumberConverter(activeLang);
+    setResult(converter.convert(Number(inputValue)));
+  }, [inputValue]);
 
   return (
     <div className="App" data-testid="app">
