@@ -6,8 +6,9 @@ body {
   width: 100vw;
   margin: 0;
   text-align: center;
+  padding-top: 10vh;
   font-family: "Times New Roman", Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(vars.$primaryColor, vars.$secondaryColor)
+  background: radial-gradient(ellipse at top, vars.$primaryColor, vars.$secondaryColor)
 }
