@@ -1,7 +1,7 @@
 # Roman Number Converter
 
-Petit projet de convertisseur de nombres en chiffres romains.
+A small Roman and Greek numeral converter project.
 
-Projet réalisé avec React et Typescript et incluant des tests codés à l'aide de la library Testing-Library.
+This project is made with React and TypeScript, and includes tests coded with Testing-library.
 
 ![GIF Widget Meteo](./docs/roman-and-greek-number-converter.gif)
